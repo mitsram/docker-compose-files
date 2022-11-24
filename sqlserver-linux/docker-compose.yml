@@ -1,0 +1,11 @@
+version: '3'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:latest
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./db:/tmp/data
+    environment:
+      - ACCEPT_EULA=Y
+      - "SA_PASSWORD=yourStrong(!)Password"
